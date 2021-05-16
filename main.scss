@@ -7,6 +7,7 @@
 body{
     // overflow: hidden;
     position: relative;
+    background-color: #000000;
 }
 .navbar{
     background-color: #212121;
@@ -17,6 +18,7 @@ body{
     position: fixed;
     top:0;
     width: 100%;
+    z-index: 999;
     .logo{
         height: 50px;
     }
@@ -116,22 +118,31 @@ body{
     border-radius: 5px;
   }
 }
-.cards{
+.technologies{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    color: #eeeeee;
+}
+.cards{
+    flex: 1 0 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+    gap: 10px;
     .card{
         color: #eeeeee;
         background-color: #222222;
-        height: 200px;
-        max-width: 450px;
+        flex: 1 0 300px;
+        height: 150px;
+        max-width: 350px;
         border-radius: 10px;
         position: relative;
         padding: 20px;
-        .path{
-            text-transform: uppercase;
-            font-size: 12px;
-            margin-bottom: 10px;
-        }
+
+
         .framework{
             font-size: 17;
             font-weight: 400;
@@ -145,9 +156,31 @@ body{
         }
     }
 }
+.trend1{
+    display: none;
+
+    @media screen and (max-width: 720px){
+        display: block;
+    }
+}
+.trend2{
+    flex: 1 0 40%;
+    order: 1;
+    .path{
+        font-size: 17px;
+    }
+    @media screen and (max-width: 720px){
+        display: none;
+    }
+}
 .pink{
     color:#ec008c;
 }
-.grey{
+.greyed{
     color: grey;
+}
+.path{
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 10px;
 }
